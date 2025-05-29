@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/python-3.11+-brightgreen.svg)](https://www.python.org/)
 
-This script uses the Nimplex library to generate alloy compositions within a simplex defined by 11 elements. It builds a composition graph with node coordinates and neighbor connections.
+This script uses the Nimplex library to generate alloy compositions within a simplex for any number of elements. It builds a composition graph with node coordinates and neighbor connections.
 
 <p>
   <a href="https://github.com/BIRDSHOT-FUSE/Alloy-Design/issues/new?labels=bug">Report a Bug</a> |
@@ -20,7 +20,7 @@ This script uses the Nimplex library to generate alloy compositions within a sim
 - Generates simplex-based alloy composition grids for any number of elements
 - Supports custom composition limits for each element
 - Outputs a CSV with node IDs, compositions, and neighbor indices
-- Includes optional 3D plotting
+- Includes plotting capabilities for visualizing the composition space
 
 ## Requirements
 
