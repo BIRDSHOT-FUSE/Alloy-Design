@@ -51,7 +51,7 @@ python generate_nimplex.py Co Cr Fe Ni --ndiv 10 --limit 0 1 0 1 0 1 0 1 --plot
 Generate a 4-element (Co, Cr, Fe, Ni) composition space with 10 divisions and equal composition limits (0 to 1):
 
 ```bash
-python generate_nimplex.py --elements Co Cr Fe Ni --ndiv 10 --limit 0 1 0 1 0 1 0 1 --plot
+python generate_nimplex.py Co Cr Fe Ni --ndiv 10 --limit 0 1 0 1 0 1 0 1 --plot
 ```
 
 This will create:
