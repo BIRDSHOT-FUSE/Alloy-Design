@@ -26,6 +26,21 @@ def generate_nimplex_space(
     Returns:
         pd.DataFrame: DataFrame containing the component space and neighbor list.
     """
+    if len(elements) != dimension:
+        raise ValueError(f"Number of elements ({len(elements)}) must match the dimension ({dimension}).")
+
+    if len(limit) != dimension or any(len(l) != 2 for l in limit):
+        raise ValueError(f"Limit must have 2 values (min and max) for each component, got {len(limit)} limits.")
+
+    if not all(isinstance(el, str) for el in elements):
+        raise ValueError("All elements must be strings representing element symbols.")
+
+    if num_division <= 0:
+        raise ValueError("Number of divisions must be a positive integer.")
+
+    if any(l[0] > l[1] for l in limit):
+        raise ValueError("Each limit's minimum must be less than or equal to its maximum.")
+
     component_space, neighbor_list = nimplex.simplex_graph_limited_fractional_py(
         dim=dimension, ndiv=num_division, limit=limit
     )
