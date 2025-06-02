@@ -95,5 +95,14 @@ class TestGenerateNimplexSpace(unittest.TestCase):
         self.assertTrue(os.path.exists(expected_html))
         os.remove(expected_html)
 
+    def test_raises_error_for_non_string_elements(self):
+        elements = ["Co", "Cr", 42]
+        dimension = 3
+        num_division = 5
+        limit = [[0, 1], [0, 1], [0, 1]]
+        with self.assertRaises(ValueError):
+            generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True)
+
+
 if __name__ == '__main__':
     unittest.main()
