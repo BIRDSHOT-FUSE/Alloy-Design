@@ -44,7 +44,7 @@ python generate_nimplex.py Co Cr Fe Ni --ndiv 10 --limit 0 1 0 1 0 1 0 1 --plot
 - `--ndiv`: Number of divisions for the simplex (default: 10)
 - `--limit`: Min and max for each element, in order. For 4 elements: `--limit 0 1 0 1 0 1 0 1`
 - `--no_csv`: If set, skips writing output to CSV
-- `--plot`: Generates a 3D plot of the composition space (only for 1 to 4 elements)
+- `--plot`: Generates a 3D plot of the composition space (only for 1 to 4 elements) For higher dimensions, the script will raise an error.
 
 ### Example
 
