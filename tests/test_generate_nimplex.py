@@ -41,7 +41,7 @@ class TestGenerateNimplexSpace(unittest.TestCase):
         num_division = 5
         limit = [[0, 1], [0, 1], [0, 1]]
         generate_nimplex_space(elements, dimension, num_division, limit, no_csv=False)
-        expected_filename = "CoCrFe_nimplex_space.csv"
+        expected_filename = "CoCrFe_ndiv_5_nimplex_space.csv"
         self.assertTrue(os.path.exists(expected_filename))
         os.remove(expected_filename)
 
@@ -91,7 +91,17 @@ class TestGenerateNimplexSpace(unittest.TestCase):
         num_division = 2
         limit = [[0, 1]] * dimension
         generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True, plot=True)
-        expected_html = "CoCrFe_plot.html"
+        expected_html = "CoCrFe_ndiv_2_plot.html"
+        self.assertTrue(os.path.exists(expected_html))
+        os.remove(expected_html)
+
+    def test_generates_plot_html_file_for_4d(self):
+        elements = ["Co", "Cr", "Fe", "Ni"]
+        dimension = 4
+        num_division = 2
+        limit = [[0, 1]] * dimension
+        generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True, plot=True)
+        expected_html = "CoCrFeNi_ndiv_2_plot.html"
         self.assertTrue(os.path.exists(expected_html))
         os.remove(expected_html)
 
