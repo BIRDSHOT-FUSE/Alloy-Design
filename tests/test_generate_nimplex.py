@@ -103,6 +103,14 @@ class TestGenerateNimplexSpace(unittest.TestCase):
         with self.assertRaises(ValueError):
             generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True)
 
+    def test_raises_error_for_limit_with_wrong_shape(self):
+        elements = ["Co", "Cr", "Fe"]
+        dimension = 3
+        num_division = 5
+        limit = [[0, 1, 2], [0, 1], [0, 1]]
+        with self.assertRaises(ValueError):
+            generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True)
+
 
 if __name__ == '__main__':
     unittest.main()
