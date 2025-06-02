@@ -52,7 +52,7 @@ def generate_nimplex_space(
     dataframe.reset_index(names="Node ID", inplace=True)
 
     if not no_csv:
-        dataframe.to_csv(f"{''.join(elements)}_nimplex_space.csv", index=False)
+        dataframe.to_csv(f"{''.join(elements)}_ndiv_{num_division}_nimplex_space.csv", index=False)
 
     if plot:
         if dimension > 4:
@@ -61,7 +61,7 @@ def generate_nimplex_space(
         from utils import plotting
         import plotly.express as px
 
-        pure_component_indices = nimplex.pure_component_indexes_py(dim, num_division)
+        pure_component_indices = nimplex.pure_component_indexes_py(dimension, num_division)
         cartesian_grid = pd.DataFrame(plotting.simplex2cartesian_py(component_space), columns=['x', 'y', 'z'])
 
         labels = ['']*len(cartesian_grid)
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--no_csv",
         action="store_true",
-        help="Whether to write the output to a CSV file (default: %(default)s)",
+        help="Do not write the output to a CSV file (default: %(default)s)",
     )
     parser.add_argument(
         "--plot",
