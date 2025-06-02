@@ -85,6 +85,15 @@ class TestGenerateNimplexSpace(unittest.TestCase):
         with self.assertRaises(ValueError):
             generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True)
 
+    def test_generates_plot_html_file(self):
+        elements = ["Co", "Cr", "Fe"]
+        dimension = 3
+        num_division = 2
+        limit = [[0, 1]] * dimension
+        generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True, plot=True)
+        expected_html = "CoCrFe_plot.html"
+        self.assertTrue(os.path.exists(expected_html))
+        os.remove(expected_html)
 
 if __name__ == '__main__':
     unittest.main()
