@@ -20,7 +20,7 @@ This script uses the Nimplex library to generate alloy compositions within a sim
 - Generates n-dimensional simplex-based alloy composition grids
 - Supports custom composition limits for each element
 - Exports a CSV with node IDs, compositions, and neighbor indices
-- Supports 3D plotting of composition space for up to 4 elements
+- Supports 2D and 3D plotting of composition space for 3 and 4 element systems
 
 ## Requirements
 
@@ -44,7 +44,7 @@ python generate_nimplex.py Co Cr Fe Ni --ndiv 10 --limit 0 1 0 1 0 1 0 1 --plot
 - `--ndiv`: Number of divisions for the simplex (default: 10)
 - `--limit`: Min and max for each element, in order. For 4 elements: `--limit 0 1 0 1 0 1 0 1`
 - `--no_csv`: If set, skips writing output to CSV
-- `--plot`: Generates a 3D plot of the composition space (only for 1 to 4 elements) For higher dimensions, the script will raise an error.
+- `--plot`: Generates a 2D or 3D plot of the composition space (only for 3 and 4 elements) For higher dimensions, the script will raise an error.
 
 ### Example
 
@@ -55,8 +55,8 @@ python generate_nimplex.py Co Cr Fe Ni --ndiv 10 --limit 0 1 0 1 0 1 0 1 --plot
 ```
 
 This will create:
-- A CSV file: `CoCrFeNi_nimplex_space.csv`
-- An HTML file with a 3D plot: `CoCrFeNi_plot.html`
+- A CSV file: `CoCrFeNi_ndiv_10_nimplex_space.csv`
+- An HTML file with a 3D plot: `CoCrFeNi_ndiv_10_plot.html`
 
 ## Output
 

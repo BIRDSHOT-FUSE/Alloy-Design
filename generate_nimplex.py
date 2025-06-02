@@ -55,14 +55,17 @@ def generate_nimplex_space(
         dataframe.to_csv(f"{''.join(elements)}_ndiv_{num_division}_nimplex_space.csv", index=False)
 
     if plot:
-        if dimension > 4:
-            raise ValueError("Plotting is only supported for 1, 2, 3, and 4-component simplexes.")
+        if dimension not in [3, 4]:
+            raise ValueError("Plotting is only supported for 3-, and 4-component simplexes.")
 
         from utils import plotting
         import plotly.express as px
 
         pure_component_indices = nimplex.pure_component_indexes_py(dimension, num_division)
-        cartesian_grid = pd.DataFrame(plotting.simplex2cartesian_py(component_space), columns=['x', 'y', 'z'])
+        cartesian_grid = pd.DataFrame(
+                plotting.simplex2cartesian_py(component_space) if dimension == 4 else component_space,
+                columns=['x', 'y', 'z']
+        )
 
         labels = ['']*len(cartesian_grid)
         for comp, idx in zip(elements, pure_component_indices):
@@ -73,20 +76,20 @@ def generate_nimplex_space(
             for i, comp in enumerate(component_space)
         ]
 
-        fig = px.scatter_3d(
-                cartesian_grid,
-                x="x",
-                y="y",
-                z="z",
-                text=labels,
-                hover_name=formulas,
-                template="simple_white",
-                width=800,
-                height=700,
-                hover_data={"x": False, "y": False, "z": False},
-        )
+        if dimension == 3:
+            fig = px.scatter_ternary(cartesian_grid, a='x', b='y', c='z')
+        else:
+            fig = px.scatter_3d(
+                    cartesian_grid,
+                    x="x", y="y", z="z",
+                    text=labels,
+                    hover_name=formulas,
+                    template="simple_white",
+                    width=800, height=700,
+                    hover_data={"x": False, "y": False, "z": False},
+            )
 
-        fig.write_html(f"{''.join(elements)}_plot.html")
+        fig.write_html(f"{''.join(elements)}_ndiv_{num_division}_plot.html")
 
     return dataframe
 
@@ -120,7 +123,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--plot",
         action="store_true",
-        help="Whether to plot the nimplex space (supported for dimensions up to 4)."
+        help="Whether to plot the nimplex space (supported for 3- and 4- dimension systems)."
     )
     args = parser.parse_args()
 
