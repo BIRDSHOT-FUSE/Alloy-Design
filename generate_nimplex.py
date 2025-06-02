@@ -64,10 +64,10 @@ def generate_nimplex_space(
         pure_component_indices = nimplex.pure_component_indexes_py(dimension, num_division)
         cartesian_grid = pd.DataFrame(
                 plotting.simplex2cartesian_py(component_space) if dimension == 4 else component_space,
-                columns=['x', 'y', 'z']
+                columns=["x", "y", "z"]
         )
 
-        labels = ['']*len(cartesian_grid)
+        labels = [""]*len(cartesian_grid)
         for comp, idx in zip(elements, pure_component_indices):
             labels[idx] = "<b>"+comp+"</b>"
 
@@ -77,7 +77,7 @@ def generate_nimplex_space(
         ]
 
         if dimension == 3:
-            fig = px.scatter_ternary(cartesian_grid, a='x', b='y', c='z')
+            fig = px.scatter_ternary(cartesian_grid, a="x", b="y", c="z")
         else:
             fig = px.scatter_3d(
                     cartesian_grid,

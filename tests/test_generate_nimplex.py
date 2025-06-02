@@ -122,5 +122,5 @@ class TestGenerateNimplexSpace(unittest.TestCase):
             generate_nimplex_space(elements, dimension, num_division, limit, no_csv=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
