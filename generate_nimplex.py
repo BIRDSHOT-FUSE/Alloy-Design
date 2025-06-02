@@ -56,7 +56,7 @@ def generate_nimplex_space(
 
     if plot:
         if dimension not in [3, 4]:
-            raise ValueError("Plotting is only supported for 3-, and 4-component simplexes.")
+            raise ValueError("Plotting is only supported for 3- and 4-component systems.")
 
         from utils import plotting
         import plotly.express as px
@@ -113,7 +113,7 @@ if __name__ == "__main__":
         "--limit",
         type=float,
         nargs="+",
-        help="Limits for each component as min max pairs in the order [min1 max1 min2 max2 ...], e.g. --limit 0 1 0 1 0 1 0 1 for 4 dimensions",
+        help="Limits for each component as min max pairs in the order [min1 max1 min2 max2 ...], e.g. --limit 0 1 0 1 0 1 0 1 for 4 components",
     )
     parser.add_argument(
         "--no_csv",
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--plot",
         action="store_true",
-        help="Whether to plot the nimplex space (supported for 3- and 4- dimension systems)."
+        help="Whether to plot the nimplex space (supported for 3- and 4- component systems)."
     )
     args = parser.parse_args()
 
