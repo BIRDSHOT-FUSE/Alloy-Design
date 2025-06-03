@@ -11,7 +11,8 @@ This script uses the Nimplex library to generate alloy compositions within a sim
 
 ## Elements
 
-Ti, V, Ta, Nb, Mo, Zr, Cr, Hf, Fe, Re, W
+Ti, V, Ta, Nb, Mo, Zr, Cr, Hf, Fe, Re, W 
+Wide composition space based on converstations with Tim
 
 ## Requirements
 
@@ -22,6 +23,6 @@ Ti, V, Ta, Nb, Mo, Zr, Cr, Hf, Fe, Re, W
 ## Usage
 
 ```bash
-python Generate_Composition_Nimplex.py```
+python Generate_Composition_Nimplex.py
 
-#TC-Python Property Module
+
