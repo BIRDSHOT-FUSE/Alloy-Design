@@ -39,7 +39,7 @@ jobs:
           nimble install -y arraymancer nimpy
           git clone https://github.com/amkrajewski/nimplex
           cd nimplex
-          nim c -d:release nimplex.nim --benchmark
+          nim c -r -d:release nimplex.nim --benchmark
           nim c -d:release --threads:on --app:lib --out:nimplex.so nimplex
           nim c -d:release --threads:on --app:lib --out=utils/plotting.so utils/plotting
 
