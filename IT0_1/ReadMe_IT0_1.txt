@@ -1,0 +1,1 @@
+This document contains the procedure used to calculate the properties for IT0_1 and what methods we used to select IT0_1.
