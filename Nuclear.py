@@ -84,9 +84,9 @@ gamma_used = gamma_data[indices]
 heat_used = heat_data[indices]
 
 # === Compute property values
-activation = compositions @ activation_used / 100
-gamma = compositions @ gamma_used / 100
-heat = compositions @ heat_used / 100
+activation = compositions @ activation_used 
+gamma = compositions @ gamma_used 
+heat = compositions @ heat_used 
 
 # === Normalize
 activation_norm = activation / activation_limit
