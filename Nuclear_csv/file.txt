@@ -1,1 +1,0 @@
-This contain the genertated composition for the nuclear activaation calculation.
