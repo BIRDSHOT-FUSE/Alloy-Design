@@ -1,0 +1,52 @@
+name: Run Tests
+
+on:
+  push:
+    paths:
+      - '**.py'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - '**.py'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Upgrade pip
+        run: pip install --upgrade pip
+
+      - name: Install nim
+        uses: iffy/install-nim@v5
+
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y liblapack-dev libpcre3-dev
+
+      - name: Install nimplex
+        run: |
+          nimble install -y arraymancer nimpy
+          git clone https://github.com/amkrajewski/nimplex
+          cd nimplex
+          nim c -r -d:release nimplex.nim --benchmark
+          nim c -d:release --threads:on --app:lib --out:nimplex.so nimplex
+          nim c -d:release --threads:on --app:lib --out=utils/plotting.so utils/plotting
+
+      - name: Install dependencies
+        run: pip install pandas numpy plotly
+
+      - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}/nimplex:${{ github.workspace }}/nimplex/utils
+        run: python -m unittest discover -s tests
