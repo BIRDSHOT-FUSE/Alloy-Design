@@ -23,9 +23,9 @@
 # reservations small (so the submission fits within the account balance).
 # Pass the decay name as a positional arg:
 #
-#     sbatch run_FLARE_5at%.slurm 1sec
-#     sbatch run_FLARE_5at%.slurm 1month
-#     sbatch run_FLARE_5at%.slurm 100yr
+#     sbatch run_FLARE_5at.slurm 1sec
+#     sbatch run_FLARE_5at.slurm 1month
+#     sbatch run_FLARE_5at.slurm 100yr
 #
 # If no arg is given, defaults to 1sec.
 #
@@ -81,7 +81,7 @@ echo "=========================================="
 echo ""
 echo "----- Running ${DECAY} decay (chunk $SLURM_ARRAY_TASK_ID) -----"
 echo "Started: $(date)"
-python "run_FLARE_${DECAY}_5at%.py"
+python "run_FLARE_${DECAY}_5at.py"
 
 echo "=========================================="
 echo "Array task $SLURM_ARRAY_TASK_ID ($DECAY) finished at: $(date)"

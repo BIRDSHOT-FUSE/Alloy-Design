@@ -92,3 +92,7 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
+IT2/01_nimplex_generation/outputs/TiVTaNbMoZrCrHfFeReW_ndiv_20_compositions.csv.gz
+IT2/02_flare_screening/outputs/IT2_FLARE_survivors.zip
+!IT2/03_high_throughput_screening/scripts/
+!IT2/03_high_throughput_screening/scripts/**

@@ -1,13 +1,16 @@
 # Environment
 
-Use this file to record the software environment used for `IT2`.
+This file records the software and compute environment used for the `IT2` workflow.
 
-Suggested items:
+## Compute Environment
 
-- operating system,
-- Python version,
-- required Python packages,
-- FLARE version or source,
-- STOIC version or source,
-- CALPHAD toolchain and database,
-- any cluster or job-submission details needed to reproduce the runs.
+- compute system: Texas A&M High Performance Research Computing (HPRC) Grace
+
+## Thermo-Calc And TC-Python
+
+- Thermo-Calc version: `2023.1`
+- TC-Python database used for the property and equilibrium calculations: `TCHEA06`
+
+## Notes
+
+- The high-throughput property and equilibrium calculations in `03_high_throughput_screening/` were run in the TAMU HPRC Grace environment.
