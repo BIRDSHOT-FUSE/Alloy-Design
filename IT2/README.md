@@ -2,6 +2,8 @@
 
 This directory documents the full `IT2` candidate-selection workflow from composition generation through final filtering.
 
+This workflow corresponds to the `IT2` `5 at%` alloy-design study.
+
 ## Prepared By
 
 Samuel Ifada
@@ -26,6 +28,11 @@ Samuel Ifada
 2. Run the FLARE workflow on the composition-only file, including calculations, filtering, survivor sets, and plots.
 3. Run high-throughput screening on the selected survivor level.
 4. Apply the final filtering workflow and collect the final candidate outputs.
+
+The final filtering step includes:
+
+- weak filtering and subgraph identification
+- Subgraph 1 final alloy categorization
 
 ## Workflow Diagram
 
@@ -54,6 +61,13 @@ flowchart TD
 - The full FLARE survivor archive is not committed to the repository because of file-size limits.
 - The selected `10x` survivor set used in `03_high_throughput_screening/` is stored as `03_high_throughput_screening/inputs/FLARE-survivors-5at-10x.csv`.
 - Step 2 keeps the FLARE scripts, notebook, and summary plots, while Step 3 starts from the extracted `10x` survivor set.
+
+## Key Outputs
+
+- `04_final_filtering_and_candidates/outputs/IT2_master.csv`
+- `04_final_filtering_and_candidates/outputs/IT2_Subgraph1.csv`
+- `04_final_filtering_and_candidates/outputs/IT2_Subgraph1_AlloyAB.csv`
+- `04_final_filtering_and_candidates/outputs/IT2_weakfilter_subgraphs.png`
 
 ## Recommended Use
 
