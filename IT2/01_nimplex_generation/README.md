@@ -4,6 +4,20 @@ This folder contains the Nimplex step used to build the `IT2` composition space 
 
 `Ti V Ta Nb Mo Zr Cr Hf Fe Re W`
 
+## Element Set
+
+![Ti](https://img.shields.io/badge/Ti-4C78A8)
+![V](https://img.shields.io/badge/V-F58518)
+![Ta](https://img.shields.io/badge/Ta-E45756)
+![Nb](https://img.shields.io/badge/Nb-72B7B2)
+![Mo](https://img.shields.io/badge/Mo-54A24B)
+![Zr](https://img.shields.io/badge/Zr-EECA3B)
+![Cr](https://img.shields.io/badge/Cr-B279A2)
+![Hf](https://img.shields.io/badge/Hf-FF9DA6)
+![Fe](https://img.shields.io/badge/Fe-9D755D)
+![Re](https://img.shields.io/badge/Re-BAB0AC)
+![W](https://img.shields.io/badge/W-2F4B7C)
+
 ## What Is Nimplex
 
 Nimplex is a library for working in compositional simplex spaces. It supports sampling, uniform grids, and graph-based traversal through composition space.

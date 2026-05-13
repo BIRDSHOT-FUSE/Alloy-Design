@@ -6,6 +6,20 @@ This directory documents the full `IT2` candidate-selection workflow from compos
 
 Samuel Ifada
 
+## Element Set
+
+![Ti](https://img.shields.io/badge/Ti-4C78A8)
+![V](https://img.shields.io/badge/V-F58518)
+![Ta](https://img.shields.io/badge/Ta-E45756)
+![Nb](https://img.shields.io/badge/Nb-72B7B2)
+![Mo](https://img.shields.io/badge/Mo-54A24B)
+![Zr](https://img.shields.io/badge/Zr-EECA3B)
+![Cr](https://img.shields.io/badge/Cr-B279A2)
+![Hf](https://img.shields.io/badge/Hf-FF9DA6)
+![Fe](https://img.shields.io/badge/Fe-9D755D)
+![Re](https://img.shields.io/badge/Re-BAB0AC)
+![W](https://img.shields.io/badge/W-2F4B7C)
+
 ## Pipeline Summary
 
 1. Generate the composition space with Nimplex, extract the Nimplex parameters, and prepare the composition-only file.
