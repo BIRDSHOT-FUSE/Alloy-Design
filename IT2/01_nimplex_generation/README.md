@@ -53,6 +53,7 @@ Separating those parameters makes the composition data easier to handle and redu
 - No external input file was used for this step.
 - The reduced composition-only file is the file used to run the FLARE calculation.
 - The reduced composition-only file is not kept in this repository because of repository file-size limits.
+- This step was run in the `nimplex` environment.
 - If graph-based analysis or plotting is needed later, the Nimplex parameters can be added back with `add_nimplex_features.py`.
 - A plot can be included if available, but it is not required to understand this step.
 

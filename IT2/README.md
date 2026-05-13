@@ -13,6 +13,20 @@ Samuel Ifada
 3. Run high-throughput screening on the selected survivor level.
 4. Apply the final filtering workflow and collect the final candidate outputs.
 
+## Workflow Diagram
+
+```mermaid
+flowchart TD
+    A["01_nimplex_generation<br/>Generate composition space with Nimplex<br/>Extract composition-only CSV"] 
+    B["02_flare_screening<br/>Run FLARE calculations<br/>Filter survivors and generate figures"]
+    C["03_high_throughput_screening<br/>Use selected 10x survivor set<br/>Run stoichiometry, property, and equilibrium workflow"]
+    D["04_final_filtering_and_candidates<br/>Apply final filtering<br/>Generate final candidate tables and figures"]
+
+    A -->|TiVTaNbMoZrCrHfFeReW_ndiv_20_compositions.csv| B
+    B -->|FLARE-survivors-5at-10x.csv| C
+    C -->|FLARE-survivors-5at-10x_equil.csv| D
+```
+
 ## Directory Guide
 
 - `00_overview/`: high-level workflow notes, assumptions, and environment details.

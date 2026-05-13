@@ -2,7 +2,13 @@
 
 This file records the software and compute environment used for the `IT2` workflow.
 
-## Compute Environment
+## Nimplex And FLARE Environment
+
+- Nimplex generation was run in the `nimplex` environment.
+- FLARE calculations were also run in the `nimplex` environment.
+- FLARE was installed inside the `nimplex` environment used for the composition workflow.
+
+## High-Throughput Screening Environment
 
 - compute system: Texas A&M High Performance Research Computing (HPRC) Grace
 
@@ -13,4 +19,5 @@ This file records the software and compute environment used for the `IT2` workfl
 
 ## Notes
 
-- The high-throughput property and equilibrium calculations in `03_high_throughput_screening/` were run in the TAMU HPRC Grace environment.
+- The Nimplex and FLARE parts of the workflow were run in the `nimplex` environment.
+- The high-throughput screening calculations were run in the TAMU HPRC Grace environment.

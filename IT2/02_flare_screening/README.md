@@ -44,3 +44,4 @@ The full FLARE survivor archive from `1x` to `31x` is not kept in this repositor
 
 - The FLARE workflow includes multiple run conditions and a stitching step before final filtering.
 - This folder keeps the scripts and notebook at the top level, while the generated results are grouped under `outputs/`.
+- This step was run in the `nimplex` environment, with FLARE installed in that environment.
